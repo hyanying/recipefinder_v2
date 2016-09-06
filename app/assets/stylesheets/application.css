@@ -1,0 +1,247 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+body
+{ 
+	font-family: 'Raleway', sans-serif, 'Open Sans', Arial;
+	font-size:1.2em;
+	background-color: #EEE;
+  background-image: url("http://i.imgur.com/oBlgekE.png");
+  /*
+  background-image: url("http://i.imgur.com/E1iJPGa.jpg");
+  background-image: url("http://i.imgur.com/oOrQDVh.jpg");
+  background-image: url("http://i.imgur.com/4qRZgKp.jpg");
+  background-image: url("http://i.imgur.com/xA80pUb.jpg");
+  */
+}
+
+footer { margin-top: 100px; }
+table, td, th { vertical-align: middle; border: none; }
+th { border-bottom: 1px solid #DDD; }
+
+
+
+a {color:black;}
+
+a:hover
+{
+  background-color:transparent;
+  text-decoration: none;
+  color:black;
+
+}
+
+.spacerTop10px {padding-top:10px;}
+.spacerTop20px {padding-top:20px;}
+.spacerTop30px {padding-top:30px;}
+.spacerTop50px {padding-top:50px;}
+.spacerBottom20px {padding-bottom:20px;}
+
+.width-100-percent {width:100%;}
+
+.textField {height:1.2em;}
+
+.btnRed
+{
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  color: #FFF!important;
+  font-weight:bold;
+  background: #c74f0e;
+  padding: 10px 15px 10px 15px;
+  text-decoration: none;
+  border:none;
+
+}
+
+.btnRed:hover 
+{
+  text-decoration: none;
+  background-color:#b3470d;
+}
+
+.btnWhite
+{
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  color: #555!important;
+  font-weight:bold;
+  background: #FFF;
+  padding: 10px 15px 10px 15px;
+  text-decoration: none;
+  border: solid #aaa 1px;
+
+}
+
+.btnWhite:hover 
+{
+  background: #FFF;
+  border: solid #aaa 1px;
+  text-decoration: none;
+}
+
+.textField
+{
+    width:100%;
+
+}
+
+.bottomPadding5px { padding-bottom:5px; }
+.bottomPadding20px { padding-bottom:20px; }
+
+.shadowEffect{ position:relative; }
+
+.shadowEffect:before, .shadowEffect:after
+{
+  z-index:-1;
+  position:absolute;
+  content:"";
+  bottom:15px;
+  left:10px;
+  width:80%;
+  top:80%;
+  max-width:300px;
+  background:#777;
+  box-shadow:0 15px 10px #000;
+  transform: rotate(-3deg);
+
+  opacity:0.8;
+  -khtml-opacity:0.8;
+  -moz-opacity:0.8;
+  filter:alpha(opacity=80);
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+
+.shadowEffect:after
+{
+  transform:rotate(3deg);
+  right:10px;
+  left:auto;  
+}
+
+/* Recipes Listing /////////////////////////////////////////// */
+
+.indexSubtitle 
+{
+  font-size:0.7em;
+}
+
+.indexAddRecipes{float:right; text-align:right;}
+
+.indexRecipeCard
+{
+	border:none;
+  margin:10px 10px 10px 10px;
+	padding:0px 0px 0px 0px; 
+	background-color:white;
+  display:inline-block;
+  -webkit-border-radius:5px;
+  -moz-border-radius: 5px;
+  border-radius:5px;   
+}
+
+.indexRecipeTitle
+{	
+  color:#000;
+  font-size:0.8em;
+	line-height:1em;
+  margin-top:10px;
+  margin-bottom:10px;
+  text-align: left; 
+}
+
+.indexRecipeTitle a
+{
+  
+  color:#000;
+
+}
+
+
+
+.indexAddRecipes
+{
+    display: inline-block;
+    vertical-align: bottom;
+    padding:30px 0px 0px 0px;
+}
+
+
+.indexGlyphicon
+{
+  font-size:16px;
+}
+
+.indexGlyphiconLeft
+{
+  float:left; 
+  width:45%; 
+  padding-left:10px;
+  text-align:left;
+  padding-bottom: 20px;
+}
+
+.indexGlyphiconRight
+{
+  float:right; 
+  width:45%; 
+  padding-right:10px;
+  text-align:right;
+  padding-bottom: 20px;
+
+}
+
+.glyphicon a:hover
+{
+  box-border:none;
+
+}
+
+/* New Recipes /////////////////////////////////////////// */
+
+.newRecipeContainer
+{
+    background-color:white;
+    border:solid 1px #CCC;
+    padding: 20px;
+}   
+
+/* View Recipe /////////////////////////////////////////// */
+
+.viewRecipeContentContainer
+{
+    font-size:1.2em;
+    text-align:left;
+    margin-bottom:10px;
+    line-height:1.3em;
+
+}
+
+.viewRecipeButtonsContainer
+{
+    font-size:1.2em;
+    padding-top:30px;
+    padding-bottom:20px;
+}
+
+.viewRecipeButtonHolder
+{
+   padding-bottom:20px;
+
+}

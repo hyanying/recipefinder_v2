@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe Search</title>
+    <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+ 	<!-- navigation bar -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Recipe Search</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+
+		<div class="row">
+
+			<!-- center content -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 spacerTop50px">
+    			<%= yield %>
+			</div>
+
+		</div>
+		<footer>
+			<div class="container text-xs-center spacerBottom20px">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					Huang Yanying 2016
+				</div>
+			</div>
+		</footer>
+
+  </body>
+</html>
