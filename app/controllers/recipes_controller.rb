@@ -4,8 +4,8 @@ class RecipesController < ApplicationController
 
   def index
 
-  	@search_term = params[:looking_for] || generateFood()
-  	@recipes = Recipe.for(@search_term)
+  	#@search_term = params[:looking_for] || generateFood()
+  	#@recipes = Recipe.for(@search_term)
 
   end
 end
