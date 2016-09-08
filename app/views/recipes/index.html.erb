@@ -48,38 +48,52 @@
 		</div>
 	</div>
 
-<% if (@recipes.nil? or @recipes == []) %>
-	<p><h2>No recipes found... Sorry</h2></p>
+	<% if (@recipes.nil? or @recipes == []) %>
 
-<% else %>
+		<p><h2>No recipes found... Sorry</h2></p>
 
-	<!-- Recipe Listing -->
-	<div class="card-columns text-xs-center">
+	<% else %>
 
-		<% @recipes.each do |course| %>
+		<!-- Recipe Listing -->
+		<div class="card-columns text-xs-center">
 
-			<div class = "card indexRecipeCard shadowEffect">
+			<% @recipes.each do |course| %>
 
-				<!-- image -->
-						  
-				<%= link_to(image_tag(course["image_url"], class: "card-img-top img-responsive text-center width-100-percent"), course["source_url"],:target => "_blank")%>			
-					
-				<!-- recipe name -->
-				<div class="card-block indexRecipeTitle text-xs-center">
+				<div class = "card indexRecipeCard shadowEffect">
 
-					<%= link_to(course["title"].html_safe,course["source_url"], :target => "_blank")%>	
+					<!-- image -->
 
-				</div>
+					<div class = "recipeCardImage">					
+						
+						<div class = "recipeCardImageHoverContainer">
 
-									
+							<div class ="recipeCardIconContainer">
+
+								<a href="" title="Save to your recipe list"><i class="fa fa-plus-circle cardIcon" aria-hidden="true"></i></a>
+
+							</div>
+						</div>
+
+						<%= link_to(image_tag(course["image_url"], class: "card-img-top img-responsive text-center width-100-percent"), course["source_url"],:target => "_blank")%>
+
+					</div>
+						
+					<!-- recipe name -->
+					<div class="card-block indexRecipeTitle text-xs-center">
+
+						<%= link_to(course["title"].html_safe,course["source_url"], :target => "_blank")%>
+
+					</div>
+
+										
+				
+				</div> 
 			
-			</div> 
-		
-		<% end %>
-			
-	</div> 
+			<% end %>	
+				
+		</div> 
 
-<% end %>	
+	<% end %>	
 
 </div>
 

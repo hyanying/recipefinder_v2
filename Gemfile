@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 #use devise gem
 gem 'devise'
 
+#use Active Model Serializer
+gem 'active_model_serializers', '0.10.0.rc4'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
