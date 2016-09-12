@@ -1,9 +1,7 @@
 
 <div class="container-fluid">
-	<p id="notice"><%= notice %></p>
-
 	
-	<div class="row spacerTop10px">
+	<div class="row spacerTop50px">
 
 		<!-- Title -->
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -74,15 +72,17 @@
 							</div>
 						</div>
 
-						
-						<%= link_to(image_tag(course["image_url"], class: "card-img-top img-responsive text-center width-100-percent"),"#", data: {toggle: "modal", target: "#myModal"})%>
+					
+						<%= link_to(image_tag(course["image_url"], class: "card-img-top img-responsive text-center width-100-percent"),"#", data: {toggle: "modal", target: "#myModal", recipeid:course["recipe_id"]})%> 
+
 
 					</div>
 						
 					<!-- recipe name -->
 					<div class="card-block indexRecipeTitle text-xs-center">
 
-						<%= link_to(course["title"].html_safe,course["source_url"], :target => "_blank")%>
+						<%= link_to(course["title"].html_safe,course["source_url"], :target => "_blank")%><br/>
+						<%= course["recipe_id"] %>
 
 					</div>
 
@@ -98,10 +98,6 @@
 
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -111,10 +107,10 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Ingredients</h4>
       </div>
       <div class="modal-body">
-        ...
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -123,5 +119,6 @@
     </div>
   </div>
 </div>
+
 
 

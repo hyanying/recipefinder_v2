@@ -9,4 +9,9 @@ class Recipe
 		get("/search", query: { q: term})["recipes"]
 	end	
 
+	def self.getDetails
+		num = 47320
+		get("/get",query:{ rId: num})
+	end 
+
 end	
