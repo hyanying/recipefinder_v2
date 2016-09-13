@@ -1,6 +1,6 @@
 module RecipesHelper
 
-	def generateFood
+	def generate_food
 	
 		food = ['beef',
 				'chicken',
