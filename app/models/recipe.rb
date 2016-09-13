@@ -12,9 +12,9 @@ class Recipe
 	end	
 
 	#query API for a specific recipe
-	def self.get_details()
-		recipe_id = 46908	
-		get("/get",query:{ rId: recipe_id})
+	def self.get_details(recipeid)
+		#recipe_id = 46908	
+		get("/get",query:{ rId: recipeid})
 	end 
 	
 

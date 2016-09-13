@@ -73,7 +73,7 @@
 						</div>
 
 					
-						<%= link_to(image_tag(course["image_url"], class: "card-img-top img-responsive text-center width-100-percent"),"#", data: {toggle: "modal", target: "#myModal", recipeid:course["recipe_id"]})%> 
+						<%= link_to(image_tag(course["image_url"], class: "card-img-top img-responsive text-center width-100-percent"),modal_path(recipeid: course["recipe_id"])) %> 
 
 					</div>
 						
@@ -94,27 +94,5 @@
 	<% end %>	
 
 </div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="myModalTitle"></h4>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="btnViewRecipeDirections">View Recipe Directions</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 

@@ -7,13 +7,14 @@ class RecipesController < ApplicationController
 
   	@search_term = params[:looking_for] || generate_food()
   	@recipes = Recipe.for(@search_term)
-    @recipe_details = Recipe.get_details()	
+    @recipe_details = Recipe.get_details(params[:recipeid])	
 
   end
 
   def modal
-  	@recipe_details = Recipe.get_details()
+    
+    @recipe_details = Recipe.get_details(params[:recipeid])
 
-  end	
+  end 
 	
 end
