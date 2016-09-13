@@ -5,12 +5,20 @@
 		
 		<div class="col-lg-12 col-md- col-sm-12 col-xs-12 text-xs-center spacerTop30px">
 			
+		<% if (@recipeDetails.nil? or @recipeDetails == []) %>
+
+			<h3>Sorry, no recipe details found</h3>
+
+		<% else %>
+
 			<% for i in 0..@recipeDetails["recipe"]["ingredients"].length %>
 
 				<%= @recipeDetails["recipe"]["ingredients"][i] %> <br/>
 
 			<% end %>
 
+		<% end %>	
+		
 		</div>
 			
 	</div>
