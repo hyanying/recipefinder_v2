@@ -42,7 +42,6 @@ a:hover
   background-color:transparent;
   text-decoration: none;
   color:black;
-
 }
 
 .spacerTop10px {padding-top:10px;}
@@ -98,7 +97,7 @@ a:hover
 
 .btnWhite:hover 
 {
-  background: #FFF;
+  background: #EEE;
   border: solid #aaa 1px;
   text-decoration: none;
 }
@@ -229,10 +228,14 @@ a:hover
 {
     background-color:white;
     border:solid 1px #CCC;
-    padding: 20px;
+    padding: 30px 50px 50px 50px;
+    -webkit-border-radius:10px;
+    -moz-border-radius: 10px;
+    border-radius:10px;   
 }   
 
 /* View Recipe /////////////////////////////////////////// */
+  
 
 .viewRecipeContentContainer
 {
@@ -252,6 +255,6 @@ a:hover
 
 .viewRecipeButtonHolder
 {
-   padding-bottom:20px;
+   padding:10px 20px 0px 20px;
 
 }

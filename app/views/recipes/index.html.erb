@@ -63,25 +63,25 @@
 
 					<div class = "recipeCardImage">					
 						
+						<!-- save button -->
 						<div class = "recipeCardImageHoverContainer">
 
 							<div class ="recipeCardIconContainer">
 
-								<a href="" title="Save to your recipe list"><i class="fa fa-plus-circle cardIcon" aria-hidden="true"></i></a>
+								<a href="" title="Save to your recipe list" class="btn btnRed">Save</a>
 
 							</div>
-						</div>
+						</div>	
 
-					
-						<%= link_to(image_tag(course["image_url"], class: "card-img-top img-responsive text-center width-100-percent"),modal_path(recipeid: course["recipe_id"])) %> 
+						<!-- image -->
+						<%= link_to(image_tag(course["image_url"], class: "card-img-top img-responsive text-center width-100-percent"),recipedetail_path(recipeid: course["recipe_id"])) %> 
 
 					</div>
 						
 					<!-- recipe name -->
 					<div class="card-block indexRecipeTitle text-xs-center">
 
-						<%= link_to(course["title"].html_safe,course["source_url"], :target => "_blank")%><br/>
-						<%= course["recipe_id"] %>
+						<%= link_to(course["title"].html_safe,recipedetail_path(recipeid: course["recipe_id"]))%>
 
 					</div>					
 				

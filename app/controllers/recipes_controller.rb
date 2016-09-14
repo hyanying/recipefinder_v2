@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
 
   end
 
-  def modal
+  def recipedetail
     
     @recipe_details = Recipe.get_details(params[:recipeid])
 

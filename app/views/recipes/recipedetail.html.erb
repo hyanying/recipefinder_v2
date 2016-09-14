@@ -1,0 +1,90 @@
+
+<div class="container-fluid">
+	
+	<div class="row spacerTop50px">
+		
+		<!-- side -->
+		<div class="col-lg-3 col-md-0 col-sm-0 col-xs-0"></div>
+
+		<!-- center -->
+		<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 text-xs-center newRecipeContainer shadowEffect">
+			
+			<% if (@recipe_details.nil? or @recipe_details == []) %>
+
+				<h3>Sorry, no recipe details found</h3>
+
+			<% else %>
+
+				<!-- save button -->
+				<div class = "recipeCardImageHoverContainer">
+
+					<div class ="recipeCardIconContainer">
+
+						<a href="" title="Save to your recipe list" class="btn btnRed">Save</a>
+
+					</div>
+				</div>			
+				
+				<!-- recipe title -->
+				<div class="row text-xs-left" id="recipeDetails_RecipeTitle">
+					<h3><strong><%= @recipe_details["recipe"]["title"].html_safe %></strong></h3>
+				</div>
+
+				<!-- recipe source -->
+				<div class="row text-xs-left" id="recipeDetails_IngredientsTitle" style="font-size:0.8em;">
+					by <%= link_to @recipe_details["recipe"]["publisher"],@recipe_details["recipe"]["source_url"], :target => "_blank" %>
+				</div>
+
+				<!-- recipe image -->
+				<div class="row spacerTop20px" id="recipeDetails_ImageContainer">
+
+
+
+					<%= image_tag(@recipe_details["recipe"]["image_url"], class: "img-responsive text-center width-100-percent") if @recipe_details["recipe"]["image_url"].present? %>
+				</div>
+
+				<!-- ingredients title -->
+				<div class="row text-xs-left spacerTop20px" id="recipeDetails_IngredientsTitle">
+					<h4><strong>Ingredients</strong></h4>
+				</div>
+					
+				<!-- recipe ingredients -->	
+				<div class="row text-xs-left" id="recipeDetails_IngredientsContainer">
+
+					<% for i in 0..@recipe_details["recipe"]["ingredients"].length %>
+
+						<%= @recipe_details["recipe"]["ingredients"][i] %> <br/>
+
+					<% end %>
+				</div>	
+
+				<!-- buttons -->
+
+				<div class="row text-xs-center" id ="recipeDetailsButtonContainer">
+
+					<!-- View Directions button -->
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 viewRecipeButtonHolder text-xs-center" id="recipeDetails_BtnViewDirections">
+						<%= link_to "View Directions", @recipe_details["recipe"]["source_url"], :target => "_blank", :class => "btn btn-block btnRed" %>
+					</div>
+
+					<!-- back button -->
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 viewRecipeButtonHolder text-xs-center" id="recipeDetails_BtnClose">
+						<a href="javascript:history.back()" class="btn btn-block btnWhite">Back</a>					
+					</div>
+
+
+
+
+
+				</div>	
+			<% end %>	
+		
+		</div>
+
+		<!-- side -->
+		<div class="col-lg-3 col-md-0 col-sm-0 col-xs-0"></div>
+			
+	</div>
+
+</div>
+

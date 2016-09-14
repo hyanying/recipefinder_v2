@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   get '/' => 'recipes#index'
   post '/' => 'recipes#index'
-  get '/modal' => 'recipes#modal'
+  get '/recipedetail' => 'recipes#recipedetail'
   get '/show' => 'users#show'
 
   resources :recipes
