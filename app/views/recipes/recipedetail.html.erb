@@ -14,29 +14,41 @@
 				<h3>Sorry, no recipe details found</h3>
 
 			<% else %>
-
-				<!-- save button -->
-				<div class = "recipeCardImageHoverContainer">
-
-					<div class ="recipeCardIconContainer">
-
-						<a href="" title="Save to your recipe list" class="btn btnRed">Save</a>
-
-					</div>
-				</div>			
+		
 				
-				<!-- recipe title -->
-				<div class="row text-xs-left" id="recipeDetails_RecipeTitle">
-					<h3><strong><%= @recipe_details["recipe"]["title"].html_safe %></strong></h3>
-				</div>
+				<!-- recipe top container -->
+				<div class="row" id="recipeDetails_RecipeTopContainer">
 
-				<!-- recipe source -->
-				<div class="row text-xs-left" id="recipeDetails_IngredientsTitle" style="font-size:0.8em;">
-					by <%= link_to @recipe_details["recipe"]["publisher"],@recipe_details["recipe"]["source_url"], :target => "_blank" %>
+					<!-- top left side -->
+					<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+
+						<!-- recipe title -->
+						<div class="row text-xs-left" id="recipeDetails_RecipeTitle ">
+							<h3><strong><%= @recipe_details["recipe"]["title"].html_safe %></strong></h3>
+						</div>
+
+						<!-- recipe source -->
+						<div class="row text-xs-left spacerBottom20px" id="recipeDetails_SourceTitle">
+							by <%= link_to @recipe_details["recipe"]["publisher"],@recipe_details["recipe"]["source_url"], :target => "_blank" %>
+						</div>
+
+					</div>	
+
+					<!-- top center -->	
+					<div class="col-lg-1 col-md-0 col-sm-0 col-xs-0"></div> 
+
+					<!-- top right side -->	
+					<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 spacerBottom20px"> 
+
+						<!-- save button -->
+						<a href="" title="Save to your recipe list" class="btn btnRed btn-block">Save</a>	
+					
+					</div>		
+
 				</div>
 
 				<!-- recipe image -->
-				<div class="row spacerTop20px" id="recipeDetails_ImageContainer">
+				<div class="row" id="recipeDetails_ImageContainer">
 
 
 
@@ -51,11 +63,13 @@
 				<!-- recipe ingredients -->	
 				<div class="row text-xs-left" id="recipeDetails_IngredientsContainer">
 
-					<% for i in 0..@recipe_details["recipe"]["ingredients"].length %>
+					<ul>	
+					<% for i in 0..@recipe_details["recipe"]["ingredients"].length-1 %>
 
-						<%= @recipe_details["recipe"]["ingredients"][i] %> <br/>
+						<li><%= @recipe_details["recipe"]["ingredients"][i] %></li>
 
 					<% end %>
+					</ul>
 				</div>	
 
 				<!-- buttons -->
@@ -65,6 +79,9 @@
 					<!-- View Directions button -->
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 viewRecipeButtonHolder text-xs-center" id="recipeDetails_BtnViewDirections">
 						<%= link_to "View Directions", @recipe_details["recipe"]["source_url"], :target => "_blank", :class => "btn btn-block btnRed" %>
+						
+		
+						<a class="text-link-small" tabindex="0" role="button" data-trigger="focus" data-placement="bottom" data-toggle="popover" data-content="Food2Fork appreciates the creative talent of recipe publishers and tries to give back by requiring that you visit their site to see the recipe directions.">Why are directions not displayed?</a>
 					</div>
 
 					<!-- back button -->

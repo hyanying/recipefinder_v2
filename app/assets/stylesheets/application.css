@@ -48,6 +48,7 @@ a:hover
 .spacerTop20px {padding-top:20px;}
 .spacerTop30px {padding-top:30px;}
 .spacerTop50px {padding-top:50px;}
+.spacerBottom10px {padding-bottom:10px;}
 .spacerBottom20px {padding-bottom:20px;}
 
 .width-100-percent {width:100%;}
@@ -139,6 +140,22 @@ a:hover
   transform:rotate(3deg);
   right:10px;
   left:auto;  
+}
+
+.text-link-small
+{
+  font-size:0.65em; 
+  text-decoration:underline; 
+  outline:none!important;
+  color:#000;
+}
+
+.text-link-small:hover
+{
+  font-size:0.65em; 
+  text-decoration:underline; 
+  outline:none!important;
+  color:#000;
 }
 
 /* Recipes Listing /////////////////////////////////////////// */
@@ -236,6 +253,10 @@ a:hover
 
 /* View Recipe /////////////////////////////////////////// */
   
+#recipeDetails_SourceTitle
+{
+    font-size:0.8em;
+}
 
 .viewRecipeContentContainer
 {
