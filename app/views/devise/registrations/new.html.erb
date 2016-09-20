@@ -1,0 +1,45 @@
+
+<div class="container-fluid">
+
+  <div class="row spacerTop50px">
+
+    <!-- side -->
+    <div class="col-lg-4 col-md-0 col-sm-0 col-xs-0"></div>
+
+    <!-- center -->
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 text-xs-center newRecipeContainer shadowEffect">
+
+      <h2>Sign Up</h2><br/>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+        <div class="field spacerBottom20px">
+          <%= f.email_field :email, autofocus: true, class: "textField", placeholder: "Email" %>
+        </div>
+
+        <div class="field spacerBottom20px">
+          <%= f.password_field :password, autocomplete: "off",class: "textField", placeholder: "Password" %>
+        </div>
+
+        <div class="field spacerBottom20px">
+          <%= f.password_field :password_confirmation, autocomplete: "off",class: "textField", placeholder: "Password again" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class:"btn btnRed btn-block" %>
+        </div>
+
+      <% end %>
+
+      <br/>
+      <%= render "devise/shared/links" %>
+
+    </div>
+
+    <!-- side -->
+    <div class="col-lg-4 col-md-0 col-sm-0 col-xs-0"></div>
+
+  </div>
+
+</div>

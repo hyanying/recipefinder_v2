@@ -20,8 +20,9 @@ body
 	font-family: 'Raleway', sans-serif, 'Open Sans', Arial;
 	font-size:1.2em;
 	background-color: #EEE;
-  background-image: url("http://i.imgur.com/oBlgekE.png");
+  
   /*
+  background-image: url("http://i.imgur.com/oBlgekE.png");
   background-image: url("http://i.imgur.com/E1iJPGa.jpg");
   background-image: url("http://i.imgur.com/oOrQDVh.jpg");
   background-image: url("http://i.imgur.com/4qRZgKp.jpg");
@@ -53,8 +54,14 @@ a:hover
 
 .width-100-percent {width:100%;}
 
-.textField {height:1.2em;}
-
+.textField 
+{
+  
+  width:100%;
+  padding-right:5px;
+  padding-left:5px;
+ 
+}
 .cardIcon
 {
   color:#c74f0e;
@@ -103,11 +110,7 @@ a:hover
   text-decoration: none;
 }
 
-.textField
-{
-    width:100%;
 
-}
 
 .bottomPadding5px { padding-bottom:5px; }
 .bottomPadding20px { padding-bottom:20px; }
@@ -156,6 +159,20 @@ a:hover
   text-decoration:underline; 
   outline:none!important;
   color:#000;
+}
+
+/* Background Images /////////////////////////////////////////*/
+
+.bg-sessions-new, .bg-registrations-new
+{
+  background-image:url('http://i.imgur.com/KOnlOP3.jpg');
+
+}
+
+.bg-recipes-index
+{
+  background-image: url("http://i.imgur.com/oBlgekE.png");
+
 }
 
 /* Recipes Listing /////////////////////////////////////////// */
