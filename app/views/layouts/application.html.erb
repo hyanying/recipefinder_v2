@@ -1,37 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Recipe Search</title>
-    <%= csrf_meta_tags %>
+<head>
+	<title>Recipe Search</title>
+	<%= csrf_meta_tags %>
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://cdnjs.cloudfare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body class ="bg-<%=controller_name%>-<%=action_name%>">
+<body class ="bg-<%=controller_name%>-<%=action_name%>">
 
-  	<!-- navigation bar v2-->
-  	<nav class="navbar navbar-fixed-top navbar-light bg-faded">
-  		
-  		<a class = "navbar-brand" href="#">PinRecipes</a>
- 		
- 		<ul class="nav navbar-nav">	
+	<!-- navigation bar v2-->
+	<nav class="navbar navbar-fixed-top navbar-light bg-faded">
+
+		<a class = "navbar-brand navbar-right" href="#">PinRecipes</a>
+
+		<ul class="nav navbar-nav">	
 
 			<% if user_signed_in? %>
 
-				Logged in as <strong><%= current_user.email %></strong>
-				<li class="nav-item">	
-					<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+				<li class="nav-item">
+
+				<form class="form-inline">
+
+
+					<!-- Search START -->
+					<%= form_tag @recipe do%>
+
+						<!-- search field -->
+						<%= text_field_tag :looking_for, nil, placeholder: "Search", class: "form-control", style: "min-width:500px;border:solid 1px #888;font-weight:bold;" %>
+						
+					<% end %>
+					<!-- Search END -->
+
+				</form>
+
 				</li>
-				<li class="nav-item">	
-					<%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link' %>	
+
+				<li class="nav-item pull-xs-right">
+					<button class="navbar-toggler pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+							&#9776;
+					</button>
+
+					<div class="collapse" id="exCollapsingNavbar">
+						<div class="">
+
+							<span class="text-muted">Logged in as <strong><%= current_user.email %></strong></span>
+								
+							<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+														
+							<%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link' %>									
+						</div>
+					</div>
 				</li>
+			
+				
+
 			<% else %>
+
 				<li class="nav-item">	
 					<%= link_to 'Sign up', new_user_registration_path, :class => 'navbar-link' %>
 				</li>
@@ -40,26 +71,26 @@
 				</li>
 			<% end %>
 		</ul>			
-  	</nav>
+	</nav>
 
-  	<!-- content -->
-  	
+	<!-- content -->
+
 	<div class="container">
 
 		<div class="row">
 
 			<!-- center content -->
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 spacerTop50px">
-    			
+
 				<% if notice %>
-					<p class ="alert alert-success"><%= notice %></p>					
+				<p class ="alert alert-success notice"><%= notice %></p>					
 				<% end %>		
 
 				<% if alert %>
-					<p class = "alert alert-danger"><%= alert %></p>
+				<p class = "alert alert-danger notice"><%= alert %></p>
 				<% end %>
 
-    			<%= yield %>
+				<%= yield %>
 
 			</div>
 
@@ -72,26 +103,26 @@
 			</div>
 		</footer>
 
-  	<script src ="https://use.fontawesome.com/6c949d1685.js"></script>
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>	
-	<script>
+		<script src ="https://use.fontawesome.com/6c949d1685.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>	
+		<script>
 
-		$(document).ready(function(){
+			$(document).ready(function(){
 
-			$('[data-toggle="popover"]').popover({html:true})
+				$('[data-toggle="popover"]').popover({html:true})
 
-			$('.popover-dismiss').power({
-				trigger: 'focus'
+				$('.popover-dismiss').power({
+					trigger: 'focus'
+				})
+
 			})
 
-		})
-		
 
 
-	</script>
+		</script>
 
-</body>
+	</body>
 
-</html>
+	</html>

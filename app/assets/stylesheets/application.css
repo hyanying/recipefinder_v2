@@ -161,6 +161,11 @@ a:hover
   color:#000;
 }
 
+.notice:empty
+{
+    display:none;
+}
+
 /* Background Images /////////////////////////////////////////*/
 
 .bg-sessions-new, .bg-registrations-new
@@ -169,7 +174,7 @@ a:hover
 
 }
 
-.bg-recipes-index
+.bg-recipes-index, .bg-recipes-recipedetail
 {
   background-image: url("http://i.imgur.com/oBlgekE.png");
 
