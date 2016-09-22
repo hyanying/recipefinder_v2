@@ -4,8 +4,8 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
-    #@boards = Board.all
-    @boards = Board.where(:user_id => current_user.id)
+    @boards = Board.all
+    #@boards = Board.where(:user_id => current_user.id)
   end
 
   # GET /boards/1
