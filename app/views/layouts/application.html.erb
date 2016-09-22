@@ -18,7 +18,7 @@
 	<!-- navigation bar v2-->
 	<nav class="navbar navbar-fixed-top navbar-light bg-faded">
 
-		<a class = "navbar-brand navbar-right" href="#">PinRecipes</a>
+		<a class = "navbar-brand" href="#">PinRecipes</a>
 
 		<ul class="nav navbar-nav">	
 
@@ -33,7 +33,7 @@
 					<%= form_tag @recipe do%>
 
 						<!-- search field -->
-						<%= text_field_tag :looking_for, nil, placeholder: "Search", class: "form-control", style: "min-width:500px;border:solid 1px #888;font-weight:bold;" %>
+						<%= text_field_tag :looking_for, nil, placeholder: "Search", class: "form-control", style: "min-]]width:80%;border:solid 1px #888;font-weight:bold;" %>
 						
 					<% end %>
 					<!-- Search END -->
@@ -42,8 +42,8 @@
 
 				</li>
 
-				<li class="nav-item pull-xs-right">
-					<button class="navbar-toggler pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+				<li class="nav-item navbar-right">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
 							&#9776;
 					</button>
 
